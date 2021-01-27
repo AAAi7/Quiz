@@ -1,0 +1,44 @@
+List<string> Questions = new List<string>();
+            Questions.Add("Who is your Computing Science Teacher?");
+            Questions.Add("Who is the prime minister of Canada?");
+            Questions.Add("What city is yyg?");
+            Questions.Add("What year are we in?");
+            //--
+            List<List<string>> Answers = new List<List<string>>();
+            Answers.Add(new List<string> { "Mr. Veldkamp", "Veldkamp", "Mr. V" });
+            Answers.Add(new List<string> { "Justin Trudeau", "justin trudeau", "Trudeau" });
+            Answers.Add(new List<string> { "Edmonton" });
+            Answers.Add(new List<string> { "2021" });
+
+            int Mark = 0;
+            for(int i=0;i<4;i++)
+            {
+                Console.WriteLine(Questions[i]);
+                Console.Write("Enter answer here:");
+                string UserAnswer = Console.ReadLine();
+                if(Answers[i].IndexOf(UserAnswer)!=-1)
+                {
+                    Mark++;
+                }
+            }
+
+            Console.WriteLine($"Your score is {Mark} / 4 ({Mark*25}%)");
+            if(Mark==4)
+            {
+                Console.Write("Great Job!");
+            }
+            if (Mark == 3)
+            {
+                Console.Write("Well done");
+            }
+            if (Mark == 2)
+            {
+                Console.Write("You need to study!");
+            }
+            if (Mark <=1)
+            {
+                Console.Write("You definitely need to study!");
+            }
+            Console.ReadKey();
+
+        }
